@@ -1,0 +1,23 @@
+# Core Google AI and LangChain libraries
+google-generativeai>=0.4.0 # Check for latest compatible version
+langchain>=0.1.0 # Check for latest compatible version
+langchain-google-genai>=0.0.6 # Check for latest compatible version
+langchain-core>=0.1.0 # Often a peer dependency
+langchain-text-splitters>=0.0.1 # Explicitly include for text splitting
+
+# Vector Store (ChromaDB) and necessary dependency
+chromadb>=0.4.0 # Check for latest compatible version
+# Required by ChromaDB in some environments (like Codespaces) to avoid native SQLite issues
+# Ensure you have the correct version for your OS/architecture if issues arise.
+pysqlite3-binary>=0.5.0
+
+# Utilities
+python-dotenv>=0.19.0 # Optional but recommended for .env file support
+
+# LangChain Hub and Tokenizer (often needed implicitly by LangChain)
+langchainhub>=0.1.0
+tiktoken>=0.4.0
+
+# Optional: For advanced document loading (uncomment if needed)
+# unstructured>=0.10.0
+# Other dependencies for specific file types might be needed by unstructured

@@ -1,0 +1,39 @@
+{
+    "name": "Gemini Project Generator Codespace",
+    // Or use a specific Python version: "mcr.microsoft.com/devcontainers/python:0-3.11"
+    "image": "mcr.microsoft.com/devcontainers/python:latest",
+    "features": {
+        // Optionally include Git features if needed for complex workflows
+        // "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                // Set Python interpreter path (usually auto-detected, but good to be explicit)
+                // Adjust python version if you changed the image tag
+                "python.defaultInterpreterPath": "/usr/local/bin/python"
+            },
+            "extensions": [
+                "ms-python.python", // Python language support
+                "ms-python.vscode-pylance", // IntelliSense, linting
+                "ms-python.debugpy", // Python debugging
+                "bierner.markdown-preview-github-styles", // Preview README like GitHub
+                "ms-azuretools.vscode-docker" // If working with Dockerfiles generated
+            ]
+        }
+    },
+    // Use 'postCreateCommand' to install dependencies after the container is created.
+    // Using '--user' avoids potential permission issues.
+    "postCreateCommand": "pip install --user -r requirements.txt",
+    // Comment out features you don't need to potentially speed up container creation.
+    // "forwardPorts": [], // No ports need to be forwarded for this script by default
+    // Set remote user if needed (default 'vscode' is usually fine)
+    // "remoteUser": "vscode"
+    // --- IMPORTANT: API Key ---
+    // Do NOT hardcode your GOOGLE_API_KEY here.
+    // Use Codespaces Secrets:
+    // 1. Go to your repository on GitHub.
+    // 2. Settings -> Secrets and variables -> Codespaces.
+    // 3. Create a New repository secret named GOOGLE_API_KEY with your actual API key value.
+    // This script will automatically pick it up from the environment.
+}
