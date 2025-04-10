@@ -2,6 +2,7 @@
 google-generativeai>=0.4.0 # Check for latest compatible version
 langchain>=0.1.0 # Check for latest compatible version
 langchain-google-genai>=0.0.6 # Check for latest compatible version
+langchain-community>=0.0.1 # Essential components like loaders, vectorstores wrappers
 langchain-core>=0.1.0 # Often a peer dependency
 langchain-text-splitters>=0.0.1 # Explicitly include for text splitting
 
